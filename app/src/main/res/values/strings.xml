@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Non Veg Hindi Jokes</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_options">MainOptions</string>
+    <string name="title_joke_list">Jokes List</string>
+    <string name="bannerAdId">ca-app-pub-5897826929463364/1213080736</string>
+    <string name="institialAdId">ca-app-pub-5897826929463364/2689813938</string>
+</resources>

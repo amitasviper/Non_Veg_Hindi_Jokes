@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.appradar.viper.nonveghindijokes" >
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.alarm.permission.SEI_ALARM" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+
+    <permission android:name="com.appradar.viper.gcmclient.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+
+    <uses-permission android:name="com.appradar.viper.gcmclient.permission.C2D_MESSAGE"/>
+
+    <!--This meta-data tag is required to use Google Play Services.-->
+    <meta-data android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainOptions"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_main_options" >
+        </activity>
+
+        <activity
+            android:name=".JokesList"
+            android:screenOrientation="portrait"
+            android:label="@string/title_joke_list" >
+        </activity>
+
+        <activity
+            android:name=".DisplayJoke"
+            android:screenOrientation="portrait"
+            android:label="@string/title_joke_list" >
+        </activity>
+
+        <service android:name=".GcmIntentService"/>
+
+        <receiver android:name=".AlarmReceiver"/>
+
+        <receiver android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.appradar.viper.gcmclient"/>
+            </intent-filter>
+        </receiver>
+
+
+        <!--Include the AdActivity configChanges and theme. -->
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+
+
+    </application>
+
+</manifest>
